@@ -20,15 +20,16 @@ gem 'hanami-authentication'
 # application.rb
 controller.prepare do
   include Hanami::Authentication
-  # before authenticate  >> This will use callbacks if authentication is failed.  
-  # before authenticate! >> This forced to halt by 401 if authentication is failed.
+
+  before authenticate  # This will use callbacks if authentication is failed.  
+  before authenticate! # This will force to halt by 401 if authentication is failed.
   
   after_session_expired do # This will be called if authenticate method is called when session is expired.
     flash[:error] = 'The session is expired.'
     redirect_to routes.root_path
   end
 
-  after_session_failed do # This will be called if authenticate method is called when user has not logged in.
+  after_authentication_failed do # This will be called if authenticate method is called when user has not logged in.
     flash[:error] = 'Please login'
     redirect_to routes.root_path
   end
@@ -38,7 +39,34 @@ end
 
 ### Methods
 
-TBD
+#### Login example
+```ruby
+# in_your_login_action.rb
+def call(params)
+  email = params[:email]
+  password = params[:password]
+  remember_me = params[:remember_me]
+
+  @current_user = @repository.find_by_email(email)
+
+  if match_password?(@current_user, password)
+    login(@current_user, remember_me: remember_me)
+    flash[:success] = 'Successful logged in'
+    redirect_to routes.root_path
+  else
+    flash[:error] = 'Email or password is incorrect'
+    redirect_to routes.root_path
+  end
+end
+```
+
+#### Logout example
+```ruby
+# in_your_login_action.rb
+def call(params)
+  logout
+end
+```
 
 ## Contributing
 
