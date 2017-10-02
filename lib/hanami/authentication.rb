@@ -56,6 +56,7 @@ module Hanami
 
     def self.included(base)
       base.class_eval do
+        _expose :current_user
         extend  ClassMethods
       end
     end
