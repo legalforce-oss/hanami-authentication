@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "hanami/auth"
+require "hanami/authentication"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

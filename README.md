@@ -1,16 +1,16 @@
-# Hanami::Auth
-[![Gem Version](https://badge.fury.io/rb/hanami-auth.svg)](https://badge.fury.io/rb/hanami-auth)
-![](http://ruby-gem-downloads-badge.herokuapp.com/hanami-auth?type=total)
+# Hanami::Authentication
+[![Gem Version](https://badge.fury.io/rb/hanami-authentication.svg)](https://badge.fury.io/rb/hanami-authentication)
+![](http://ruby-gem-downloads-badge.herokuapp.com/hanami-authentication?type=total)
 
 
-Hanami::Auth is simple authentication helpers for [hanami-controller](https://github.com/hanami/controller)
+`Hanami::Authentication` is simple authentication helpers for [hanami-controller](https://github.com/hanami/controller)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'hanami-auth'
+gem 'hanami-authentication'
 ```
 
 ## Usage
@@ -27,4 +27,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Hanami::Auth project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/unhappychoice/hanami-auth/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Hanami::Auth project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/unhappychoice/hanami-authentication/blob/master/CODE_OF_CONDUCT.md).

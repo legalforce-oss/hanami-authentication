@@ -1,8 +1,8 @@
-require 'hanami/auth/version'
+require 'hanami/authentication/version'
 require 'bcrypt'
 
 module Hanami
-  module Auth
+  module Authentication
 
     private
 
