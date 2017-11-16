@@ -15,7 +15,7 @@ module Hanami
         @current_user
       end
 
-      def authenticate
+      def authenticate(params)
         bearer_token = token_from_header
         halt 401 unless bearer_token
         token = self.class.find_token_block.call(bearer_token)
