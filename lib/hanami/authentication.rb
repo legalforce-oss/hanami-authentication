@@ -67,9 +67,9 @@ module Hanami
           include Utils::ClassAttribute
 
           class_attribute :after_session_expired_callbacks
-          self.after_session_expired_callbacks = Utils::Callbacks::Chain.new
-
           class_attribute :after_authentication_failed_callbacks
+
+          self.after_session_expired_callbacks = Utils::Callbacks::Chain.new
           self.after_authentication_failed_callbacks = Utils::Callbacks::Chain.new
         end
       end
