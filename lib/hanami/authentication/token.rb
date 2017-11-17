@@ -29,7 +29,7 @@ module Hanami
       end
 
       def token_from_header
-        header = request.get_header('Authorization')
+        header = request.get_header('HTTP_AUTHORIZATION')
         return unless header
         matched = header.match(/Bearer (.+)$/)
         matched && matched[1]
