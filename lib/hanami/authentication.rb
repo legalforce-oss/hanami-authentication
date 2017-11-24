@@ -37,7 +37,7 @@ module Hanami
       end
     end
 
-    def authenticate
+    def authenticate(_params)
       if session_expired?
         logout
         self.class.after_session_expired_callbacks.run(self)
